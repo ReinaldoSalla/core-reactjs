@@ -1,0 +1,25 @@
+.title-women {
+  font-size: 30pt;
+  text-align: center;
+}
+
+.item-women {
+  height: 30em;
+  width: 20em;
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: .5em;
+  padding: 1em;
+  background-color: white;
+  transition: transform 300ms bounce;
+}
+
+.items-women {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
