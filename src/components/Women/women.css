@@ -1,3 +1,14 @@
+i {
+  color: lightgrey;
+  transition: 0.5s;
+}
+
+i:hover {
+  color: grey;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
 .title-women {
   font-size: 30pt;
   text-align: center;
@@ -22,4 +33,25 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
+}
+
+.price-add-women {
+  display: flex;
+  justify-content: space-between;
+}
+
+#product-name-women {
+  border-top: 1px solid lightgrey;
+  padding: 1em 0 0;
+  font-size: 1.5em;
+  font-family: "Lato", sans-serif;
+  margin: .5em 0;
+}
+
+#product-description-women {
+  font-size: 1em;
+  font-family: "Lato", sans-serif;
+  color: grey;
+  font-weight: lighter;
+  margin: 0;
 }
