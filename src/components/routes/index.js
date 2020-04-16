@@ -3,8 +3,7 @@ import {
 	Switch,
 	Route
 } from "react-router-dom";
-import Cart from "./Cart";
-import Products from "./Products/products.js";
+import Products from "../products/";
 
 export default function Routes() {
 	return (

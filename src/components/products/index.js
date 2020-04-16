@@ -1,8 +1,8 @@
 import React from "react";
 import { Icon } from "react-materialize";
 import { Link } from "react-router-dom";
-import { data } from "../data.js";
-import "./products.css";
+import { data } from "../../data";
+import "./index.css";
 
 function Title(props) {
   return (
@@ -39,7 +39,7 @@ function Items(props) {
   );
 }
 
-export default function Women(props) {
+export default function Products(props) {
   return (
     <div>
       <Title title={props.title}/>

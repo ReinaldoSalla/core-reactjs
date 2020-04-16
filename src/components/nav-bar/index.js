@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "react-materialize";
 import { NavLink } from "react-router-dom";
-import "../styles/upper-nav-bar.css";
+import "./index.css";
 
 export default function UpperNavBar() {
 	return (
