@@ -9,12 +9,12 @@ i:hover {
   cursor: pointer;
 }
 
-.title-women {
+.title {
   font-size: 30pt;
   text-align: center;
 }
 
-.item-women {
+.item {
   height: 30em;
   width: 20em;
   font-family: 'Quicksand', sans-serif;
@@ -27,7 +27,7 @@ i:hover {
   transition: transform 300ms bounce;
 }
 
-.items-women {
+.items {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -35,12 +35,12 @@ i:hover {
   width: 100vw;
 }
 
-.price-add-women {
+.price-add {
   display: flex;
   justify-content: space-between;
 }
 
-#product-name-women {
+#product-name {
   border-top: 1px solid lightgrey;
   padding: 1em 0 0;
   font-size: 1.5em;
@@ -48,7 +48,7 @@ i:hover {
   margin: .5em 0;
 }
 
-#product-description-women {
+#product-description {
   font-size: 1em;
   font-family: "Lato", sans-serif;
   color: grey;
