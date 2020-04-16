@@ -21,7 +21,7 @@ function Items(props) {
   }
   productItems = productItems.map(product => 
     <div key={product.id} className="item">
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/products/${product.id}`}>
         <img alt={product.name} src={product.img} />
         <h1 id="product-name">{product.name}</h1>
         <h4 id="product-description">{product.description}</h4>

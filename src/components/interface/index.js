@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 import MainPage from "../base-layout/";
 import Routes from "../routes/";
 
+/*
 export const Interface = (
 	<BrowserRouter>
 		<MainPage>
@@ -10,4 +11,9 @@ export const Interface = (
 		</MainPage>
 	</BrowserRouter>
 );
+*/
+
+export  function Interface() {
+  return <p>learn react router</p>;
+}
 

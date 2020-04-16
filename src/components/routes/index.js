@@ -4,6 +4,8 @@ import {
 	Route
 } from "react-router-dom";
 import Products from "../products/";
+import Cart from "../Cart/";
+import Product from "../ShowProduct";
 
 export default function Routes() {
 	return (
@@ -16,6 +18,12 @@ export default function Routes() {
       </Route>
       <Route path="/men">
         <Products title="Men's Items" target="men" />
+      </Route>
+      <Route path="/products/:id">
+        <Product />
+      </Route>
+      <Route path="/cart" exact>
+        <Cart />
       </Route>
 		</Switch>
 	);
