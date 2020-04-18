@@ -1,3 +1,8 @@
+img {
+  height: 250px;
+  width: 225px;
+}
+
 i {
   color: lightgrey;
   transition: 0.5s;

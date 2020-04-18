@@ -4,8 +4,7 @@ import {
 	Route
 } from "react-router-dom";
 import Products from "../products/";
-import Cart from "../Cart/";
-import Product from "../ShowProduct";
+import SingleProduct from "../single-product";
 
 export default function Routes() {
 	return (
@@ -20,10 +19,7 @@ export default function Routes() {
         <Products title="Men's Items" target="men" />
       </Route>
       <Route path="/products/:id">
-        <Product />
-      </Route>
-      <Route path="/cart" exact>
-        <Cart />
+        <SingleProduct />
       </Route>
 		</Switch>
 	);
