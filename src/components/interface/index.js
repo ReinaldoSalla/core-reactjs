@@ -19,9 +19,129 @@ import React from "react";
 import {
 	BrowserRouter,
 	Link,
-	Route
+	Route,
+	useParams
 } from "react-router-dom";
 import { Icon } from "react-materialize";
+
+
+function Home() {
+	return (
+		<div>
+			<h1>Content to be rendered in home page</h1>
+		</div>
+	);
+}
+
+const data = {
+	title: "Products to buy",
+	items: [
+		{ id: 1, name: "Notebook dell i7 rtx", price: 10000},
+		{ id: 2, name: "Tv lg 80' 4k oled", price: 10000},
+		{ id: 3, name: "Shaver bouman professional", price: 10000}
+	]
+};
+
+function Items() {
+	const productItems = data.items.map(product => 
+		<li key={product.id}> <Link to={`/products/${product.id}`}>{product.name}</Link>, costs ${product.price}</li>
+	);
+	return (
+		<div>
+			<ul> {productItems} </ul>
+		</div>
+	);
+}
+
+function Products() {
+	return (
+		<div>
+			<Route path="/products" exact>
+				<Items />
+			</Route>
+			<Route path="/products/:id" component={Product}/>
+		</div>
+	);
+}
+
+class Product extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { numBuys: 0 };
+		this.onClick = this.onClick.bind(this);
+	}
+
+	onClick() {
+		this.setState({ numBuys: this.state.numBuys+1 });
+	}
+
+	render() {
+		const product = data.items.find(prod => 
+			prod.id === parseInt(this.props.match.params.id)
+		);
+		return (
+			<div>
+				<BrowserRouter>
+					<Route path={`/products/${this.props.match.params.id}`} exact>
+						<p>{product.name}</p>
+						<Link to="/cart">
+							<button onClick={this.onClick}>
+								Buy
+							</button>
+						</Link>
+					</Route>
+					<Route path="/cart">
+						<Cart product={product.name} />
+					</Route>
+				</BrowserRouter>
+			</div>
+		);
+	}
+}
+
+class Cart extends React.Component {
+	state = { items: [] };
+
+	static getDerivedStateFromProps(props, state) {
+		return {
+			items: state.items.concat(props.product)
+		}
+	}
+
+	render() {
+		console.log(this.state.items);
+		return (
+			<div>
+				<p>Current state on shopping cart</p>
+			</div>
+		);
+	}
+}
+
+/*
+class Cart extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = { items: null };
+	}
+
+	componentDidUpdate(prevProps, prevState) {
+		console.log("does it even get here????????????");
+		let newProduct;
+		newProduct = prevState.items.concat(prevProps.product);
+		this.setState({ newProduct });
+	}
+
+	render() {
+		console.log(this.state.items);
+		return (
+			<div>
+				<h1>cart</h1>
+			</div>
+		);
+	}
+}
+*/
 
 export default function BaseLayout() {
 	return (
@@ -36,41 +156,8 @@ export default function BaseLayout() {
 				<Products />
 			</Route>
 			<Route path="/cart">
-				<Cart />
+				<Cart product={null}/>
 			</Route>
 		</BrowserRouter>
 	);
 }
-
-function Home() {
-	return (
-		<div>
-			<h1>Content to be rendered in home page</h1>
-		</div>
-	);
-}
-
-function Products() {
-	return (
-		<div>
-			<h1>products</h1>
-		</div>
-	);
-}
-
-function Product() {
-	return (
-		<div>
-			<h1>Product</h1>
-		</div>
-	);
-}
-
-function Cart() {
-	return (
-		<div>
-			<h1>Cart</h1>
-		</div>
-	);
-}
-
